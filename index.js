@@ -24,6 +24,7 @@ app.get('/api/movies/:id', (req, res) => {
 });
 
 app.get('/api/employee', (req, res) => {
+    const name = req.query.name;
     res.status(404).send(`Impossible de récupérer l employé ${name} `);
-    const { name } = req.query;
 });
+
