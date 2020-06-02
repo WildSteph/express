@@ -19,9 +19,11 @@ app.get('/api/movies', (req, response) => {
   });
 
 app.get('/api/movies/:id', (req, res) => {
-    res.json({id:'<id du film>'});
+  const { id } = req.params;
+  res.json({ id });
 });
 
 app.get('/api/employee', (req, res) => {
-    res.status(404).send('Impossible de récupérer l employé <nom de l employé>');
+    res.status(404).send(`Impossible de récupérer l employé ${name} `);
+    const { name } = req.query;
 });
